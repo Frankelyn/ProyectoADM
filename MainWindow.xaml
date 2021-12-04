@@ -1,0 +1,77 @@
+﻿<Window x:Class="CondominioADM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CondominioADM"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+    <Grid>
+        <StackPanel>
+            <Menu FontFamily="Comic Sans MS">
+                <MenuItem Header="Registros">
+                    <MenuItem Header="Registro de Residentes" x:Name="ResidentesMenuItem" Click="ResidentesMenuItem_Click"/>
+                    <MenuItem Header="Registro de Apartamentos" x:Name="ApartamentosMenuItem" Click="ApartamentosMenuItem_Click"/>
+                    <MenuItem Header="Registro de Parqueos" x:Name="ParqueosMenuItem" Click="ParqueosMenuItem_Click"/>
+                    <MenuItem Header="Registro de Usuarios" x:Name="UsuariosMenuItem" Click="UsuariosMenuItem_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="Rentas">
+                    <MenuItem Header="Rentar Apartamento" x:Name="RentaApartamentosMenuItem" Click="RentaApartamentosMenuItem_Click"/>
+                    <MenuItem Header="Rentar Parqueo" x:Name="RentaParqueosMenuItem" Click="RentaParqueosMenuItem_Click"/>
+                </MenuItem>
+
+                <MenuItem Header="Cuentas">
+                    <MenuItem Header="Depositos">
+                        <MenuItem Header="Registrar Deposito de Apartamento" x:Name="DepositoApartamentoMenuItem" Click="DepositoApartamentoMenuItem_Click"/>
+                        <MenuItem Header="Registrar Deposito de Parqueo" x:Name="DepositoParqueoMenuItem" Click="DepositoParqueoMenuItem_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Pagos">
+                        <MenuItem Header="Realizar Pago de Apartamento" x:Name="PagoApartamentoMenuItem" Click="PagoApartamentoMenuItem_Click"/>
+                        <MenuItem Header="Realizar Pago de Parqueo" x:Name="PagoParqueoMenuItem" Click="PagoParqueoMenuItem_Click"/>
+                    </MenuItem>
+
+                </MenuItem>
+
+
+                <MenuItem Header="Consultas">
+                    <MenuItem Header="Consulta de Registros">
+                        <MenuItem Header="Consulta de Residentes" x:Name="cResidentesMenuItem" Click="cResidentesMenuItem_Click"/>
+                        <MenuItem Header="Consulta de Apartamentos" x:Name="cApartamentosMenuItem" Click="cApartamentosMenuItem_Click"/>
+                        <MenuItem Header="Consulta de Parqueos" x:Name="cParqueosMenuItem" Click="cParqueosMenuItem_Click"/>
+                        <MenuItem Header="Consulta de Usuarios" x:Name="cUsuariosMenuItem" Click="cUsuariosMenuItem_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Consulta de Rentas">
+                        <MenuItem Header="Consulta de Apartamentos Rentados" x:Name="cRentaApartamentosMenuItem" Click="cRentaApartamentosMenuItem_Click"/>
+                        <MenuItem Header="Consulta de Parqueos Rentados" x:Name="cRentaParqueosMenuItem" Click="cRentaParqueosMenuItem_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="Consulta de Cuentas">
+                        <MenuItem Header="Consulta de Depositos">
+                            <MenuItem Header="Consulta de Deposito de Apartamento" x:Name="cDepositoApartamentoMenuItem" Click="cDepositoApartamentoMenuItem_Click"/>
+                            <MenuItem Header="Consulta de  Deposito de Parqueo" x:Name="cDepositoParqueoMenuItem" Click="cDepositoParqueoMenuItem_Click"/>
+                        </MenuItem>
+
+                        <MenuItem Header="Consulta de Pagos">
+                            <MenuItem Header="Consulta de Pago de Apartamento" x:Name="cPagoApartamentoMenuItem" Click="cPagoApartamentoMenuItem_Click"/>
+                            <MenuItem Header="Consulta de Pago de Parqueo" x:Name="cPagoParqueoMenuItem" Click="cPagoParqueoMenuItem_Click"/>
+                        </MenuItem>
+
+                    </MenuItem>
+
+                </MenuItem>
+                
+            </Menu>
+        </StackPanel>
+    </Grid>
+</Window>

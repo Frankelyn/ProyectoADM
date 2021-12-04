@@ -1,0 +1,113 @@
+﻿<Window x:Class="CondominioADM.UI.Registros.rPagoApartamento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CondominioADM.UI.Registros"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="Realizar Pago de Apartamento" Height="570" Width="590" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+
+            <StackPanel Orientation="Horizontal" Margin="10,10,0,0">
+                <StackPanel>
+                    <Label Content="PagoId:" FontFamily="Comic Sans Ms"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <TextBox x:Name="PagoApartamentoIdTextBox" Text="{Binding PagoApartamentoId}" Width="100" Height="24" FontFamily="Comic Sans Ms"/>
+                        <Button x:Name="BuscarButton" Margin="6,0" Click="BuscarButton_Click">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Resources/search-icon (2).png" />
+                                <Label Content="Buscar" FontWeight="Bold" Foreground="White" FontFamily="Comic Sans Ms"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button x:Name="ImprimirButton" Click="ImprimirButton_Click" Margin="250,0,0,0">
+                            <StackPanel>
+                                <Image Source="/Resources/print-icon.png"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Margin="10,10,0,0">
+                <Label Content="Fecha de registro:" Margin="0,10,0,0"/>
+                <DatePicker x:Name="Fecha_DatePicker" SelectedDate="{Binding Fecha}" SelectedDateFormat="Short" Width="380" HorizontalAlignment="Left" Margin="0,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <GroupBox Header="Renta">
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <Label Content="Numero de Apartamento:" FontFamily="Comic Sans Ms"/>
+                                <TextBox x:Name="ApartamentoTextBox" IsReadOnly="True" Text="{Binding Arrienda.NumeroApartamento}" Width="380" HorizontalAlignment="Left" FontFamily="Comic Sans Ms"/>
+
+                                <Label Content="Nombre del Residente:" FontFamily="Comic Sans Ms"/>
+                                <TextBox x:Name="ResidenteTextBox" IsReadOnly="True" Text="{Binding Arrienda.NombreResidente}" Width="380" HorizontalAlignment="Left" FontFamily="Comic Sans Ms"/>
+
+                                <Label Content="Monto de la Renta:" FontFamily="Comic Sans Ms"/>
+                                <TextBox x:Name="MontoTextbox" IsReadOnly="True" Text="{Binding Arrienda.MontoRenta, StringFormat=N2}" Width="380" HorizontalAlignment="Left" FontFamily="Comic Sans Ms"/>
+
+                            </StackPanel>
+
+                            <StackPanel Margin="15,0,0,0">
+                                <Button x:Name="BuscarRentaButton" Click="BuscarRentaButton_Click">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="/Resources/search-icon (2).png" />
+                                        <Label Content="Buscar Renta" Foreground="White" FontWeight="Bold" FontFamily="Comic Sans Ms"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+
+            <StackPanel Margin="0,10,0,0" Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel>
+                    <Label Content="Monto a Pagar:" FontFamily="Comic Sans Ms"/>
+                    <TextBox x:Name="MontoPagoTextbox" Text="{Binding MontoPago, StringFormat=N2}"  TextChanged="MontoPagoTextbox_TextChanged"  Width="180" HorizontalAlignment="Left" FontFamily="Comic Sans Ms"/>
+                </StackPanel>
+
+                <StackPanel Margin="100,0,0,0">
+                    <Label Content="Devuelta:" FontFamily="Comic Sans Ms"/>
+                    <Label x:Name="DevueltaLabel" FontFamily="Comic Sans Ms" FontSize="24" Foreground="LightBlue"/>
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,40,0,0" HorizontalAlignment="Center">
+                <Button x:Name="NuevoButton" Click="NuevoButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/Files-New-File-icon.png" Height="20"/>
+                        <Label Content="Nuevo" FontWeight="Bold" Foreground="White" FontFamily="Comic Sans Ms"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="GuardarButton" Margin="15,0" Click="GuardarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/floppy-icon.png" Height="20"/>
+                        <Label Content="Guardar" FontWeight="Bold" Foreground="White" FontFamily="Comic Sans Ms"/>
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="EliminarButton" Click="EliminarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/blue-document-cross-icon.png" />
+                        <Label Content="Eliminar"  FontWeight="Bold" Foreground="White" FontFamily="Comic Sans Ms"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,86 @@
+﻿<Window x:Class="CondominioADM.UI.Consultas.cArriendaParqueos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CondominioADM.UI.Consultas"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"        
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="Consulta de Parqueos Rentados" Height="565" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel>
+                        <Label Content="Desde:"/>
+                        <DatePicker x:Name="Desde_DataPicker"/>
+                    </StackPanel>
+
+                    <StackPanel HorizontalAlignment="Left">
+                        <Label Content="Filtro:" />
+                        <ComboBox x:Name="Filtro_ComboBox" Width="150" Margin="0,0,0,5">
+                            <ComboBoxItem Content="Id"/>
+                            <ComboBoxItem Content="ResidenteId"/>
+                            <ComboBoxItem Content="ParqueoId"/>
+                        </ComboBox>
+
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="45,0,0,0">
+
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="Hasta:" />
+                        <DatePicker x:Name="Hasta_DatePicker"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                        <Label Content="Critero:"/>
+                        <TextBox x:Name="Criterio_TextBox" Width="144" Height="24"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Margin="120,25,0,0">
+                    <Button x:Name="Buscar_Button" Click="Buscar_Button_Click"  Height="72" Width="85">
+                        <StackPanel Orientation="Vertical" >
+                            <Image Source="/Resources/search-icon (2).png" Height="30"/>
+                            <Label Content="Buscar" Width="56" FontWeight="Bold" Foreground="White" FontStyle="Italic" FontSize="16" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Left" >
+                <DataGrid x:Name="DatosDataGrid" IsReadOnly="True" AlternatingRowBackground="Gainsboro" TextBlock.TextAlignment="Center" Height="350" Width="545">
+                    <DataGrid.Columns>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                    <Label Content="Conteo" FontFamily="Comic Sans MS" FontSize="12"/>
+                    <TextBox x:Name="ConteoTextbox" IsReadOnly="True" Height="22" Width="50" FontFamily="Comic Sans MS"/>
+                </StackPanel>
+
+                <StackPanel Margin="0,0,0,0">
+                    <Button x:Name="AgregarButton" Click="AgregarButton_Click"  Margin="325,0,0,0" Height="40">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Resources/button-plus-icon.png" />
+                            <Label Content="Agregar" FontFamily="Comic Sans MS" Foreground="White" FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>
